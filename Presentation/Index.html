@@ -4,10 +4,9 @@
     <title>Ultimate ToDoApp</title>
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
-    <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
 </head>
-<body>
+<body ng-controller="mainController">
     <ul class="nav nav-tabs">
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Settings</a></li>
@@ -15,7 +14,9 @@
     </ul>
 
     <div class="row">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <task-list-editor></task-list-editor>
+        </div>
         <div class="col-md-6"></div>
     </div>
 
@@ -23,5 +24,20 @@
         <div class="col-md-6"></div>
         <div class="col-md-6"></div>
     </div>
+    <script>
+        ultimateToDoApp = angular.module('ultimateToDoApp', []);
+    </script>
+    <!-- Models-->
+    <script src="Models/TaskItemModel.js"></script>
+    <!-- EndModels-->
+    <!--Directives-->
+    <script src="Directives/TaskListEditorDirective.js"></script>
+    <script src="Directives/TaskItemDirective.js"></script>
+    <!--EndDirectives-->
+    <!--Controllers-->
+    <script src="Controllers/MainController.js"></script>
+    <!--EndControllers-->
+
+
 </body>
 </html>
