@@ -1,7 +1,11 @@
 ﻿/// <reference path="../Models/TaskItemModel.js" />
 
 ultimateToDoApp.controller('mainController', function MainCtrl($scope) {
-    $scope.tasks = GetTasks();
+    $scope.urgentImportant = GetTasks();
+    $scope.urgentNotImportant = [];
+    $scope.notUrgentImportant = GetTasks();
+    $scope.notUrgentNotImportant = [];
+
 });
 
 

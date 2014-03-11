@@ -15,14 +15,20 @@
 
     <div class="row">
         <div class="col-md-6">
-            <task-list-editor></task-list-editor>
+            <task-list-editor tasks="urgentImportant"></task-list-editor>
         </div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <task-list-editor tasks="notUrgentImportant"></task-list-editor>
+        </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6"></div>
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+            <task-list-editor tasks="urgentNotImportant"></task-list-editor>
+        </div>
+        <div class="col-md-6">
+            <task-list-editor tasks="notUrgentNotImportant"></task-list-editor>
+        </div>
     </div>
     <script>
         ultimateToDoApp = angular.module('ultimateToDoApp', []);

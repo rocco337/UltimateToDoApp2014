@@ -1,5 +1,18 @@
-﻿<ul class="list-group" ng-repeat="task in tasks">
-    <li class="list-group-item">
-        <task-item task="task"></task-item>
+﻿
+<div class="row" style="margin:15px 15px;">
+    <div class="col-md-8">
+        <input type="text" class="form-control" style="margin-top:5px;" placeholder="Enter task" ng-model="task.Name" />
+    </div>
+    <div class="col-md-4">
+        <button class="btn btn-lg" ng-click="AddTask(task)">Do it</button>
+    </div>
+</div>
+<ul class="list-group">  
+    <li class="list-group-item" ng-repeat="task in tasks">
+        <div class="row">
+            <div class="col-md-2">{{task.Index}}</div>
+            <div class="col-md-7">{{task.Name}}</div>
+            <div class="col-md-3"><button ng-click="DeleteTask(task)">X</button></div>
+        </div>
     </li>
 </ul>
