@@ -1,21 +1,29 @@
-﻿ultimateToDoApp.directive('taskListEditor',function (){
+﻿ultimateToDoApp.directive('taskListEditor', function (TasksService) {
     return {
         restrict: 'AE',
         templateUrl: 'Views/TaskListEditor.html',
         scope: {
-            tasks:'='
+            tasks: '=',
+            category:'='
         },
         controller: ['$scope', function ($scope) {
             $scope.AddTask = function (task) {
-                task.Index = $scope.tasks.length;
-                $scope.tasks.push(angular.copy(task));
+                task.Index = $scope.tasks.length + 1;
+                task.Category = $scope.category;
+                task.Created = new Date();
+
+                $scope.tasks.push(task);
+
+                TasksService.InsertNewTask(task);
+
                 $scope.task = new TaskItemModel();
                 task = new TaskItemModel();
             };
 
-            $scope.DeleteTask = function(task)
+            $scope.DeleteTask = function(index)
             {
-                $scope.tasks.splice(task.Index - 1, 1);
+                var task = $scope.tasks.splice(index, 1)[0];
+                TasksService.DeleteTask(task);
             }
         }],
 

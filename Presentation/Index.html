@@ -15,19 +15,19 @@
 
     <div class="row">
         <div class="col-md-6">
-            <task-list-editor tasks="urgentImportant"></task-list-editor>
+            <task-list-editor tasks="urgentImportant" category="1"></task-list-editor>
         </div>
         <div class="col-md-6">
-            <task-list-editor tasks="notUrgentImportant"></task-list-editor>
+            <task-list-editor tasks="notUrgentImportant" category="2"></task-list-editor>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <task-list-editor tasks="urgentNotImportant"></task-list-editor>
+            <task-list-editor tasks="urgentNotImportant" category="3"></task-list-editor>
         </div>
         <div class="col-md-6">
-            <task-list-editor tasks="notUrgentNotImportant"></task-list-editor>
+            <task-list-editor tasks="notUrgentNotImportant" category="4"></task-list-editor>
         </div>
     </div>
     <script>
@@ -38,12 +38,12 @@
     <!-- EndModels-->
     <!--Directives-->
     <script src="Directives/TaskListEditorDirective.js"></script>
-    <script src="Directives/TaskItemDirective.js"></script>
     <!--EndDirectives-->
     <!--Controllers-->
     <script src="Controllers/MainController.js"></script>
     <!--EndControllers-->
-
-
+    <!--Services-->
+    <script src="Services/TasksService.js"></script>
+    <!--EndServices-->
 </body>
 </html>
