@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp", "UltimateToDoApp\UltimateToDoApp.csproj", "{1357D5A1-BFCC-4CEC-B948-9BD107CD832E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.Presentation", "Presentation\UltimateToDoApp.Presentation.csproj", "{658E2F6B-033B-477D-9206-D72FF20F2B57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.WebApi", "UltimateToDoApp.WebApi\UltimateToDoApp.WebApi.csproj", "{568D5360-33F9-45E5-896D-293DABC76493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.DataAccess", "UltimateToDoApp.DataAccess\UltimateToDoApp.DataAccess.csproj", "{1895CD20-685C-42B8-BB10-C0C129D96382}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.Contracts", "UltimateToDoApp.Contracts\UltimateToDoApp.Contracts.csproj", "{1D287AF7-C56B-4D90-8A81-DAEA4B997C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.Tests", "UltimateToDoApp.Tests\UltimateToDoApp.Tests.csproj", "{E40CF45E-0AD8-4616-B53C-CF7CEE2AF276}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1357D5A1-BFCC-4CEC-B948-9BD107CD832E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1357D5A1-BFCC-4CEC-B948-9BD107CD832E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1357D5A1-BFCC-4CEC-B948-9BD107CD832E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1357D5A1-BFCC-4CEC-B948-9BD107CD832E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{658E2F6B-033B-477D-9206-D72FF20F2B57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{658E2F6B-033B-477D-9206-D72FF20F2B57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{658E2F6B-033B-477D-9206-D72FF20F2B57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{658E2F6B-033B-477D-9206-D72FF20F2B57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{568D5360-33F9-45E5-896D-293DABC76493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{568D5360-33F9-45E5-896D-293DABC76493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{568D5360-33F9-45E5-896D-293DABC76493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{568D5360-33F9-45E5-896D-293DABC76493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1895CD20-685C-42B8-BB10-C0C129D96382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1895CD20-685C-42B8-BB10-C0C129D96382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1895CD20-685C-42B8-BB10-C0C129D96382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1895CD20-685C-42B8-BB10-C0C129D96382}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D287AF7-C56B-4D90-8A81-DAEA4B997C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D287AF7-C56B-4D90-8A81-DAEA4B997C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D287AF7-C56B-4D90-8A81-DAEA4B997C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D287AF7-C56B-4D90-8A81-DAEA4B997C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E40CF45E-0AD8-4616-B53C-CF7CEE2AF276}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E40CF45E-0AD8-4616-B53C-CF7CEE2AF276}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E40CF45E-0AD8-4616-B53C-CF7CEE2AF276}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E40CF45E-0AD8-4616-B53C-CF7CEE2AF276}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
