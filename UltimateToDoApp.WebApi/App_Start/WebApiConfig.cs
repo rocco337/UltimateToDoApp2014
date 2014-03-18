@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace UltimateToDoApp.WebApi
 {
@@ -13,7 +14,10 @@ namespace UltimateToDoApp.WebApi
     {
 
         public static void Register(HttpConfiguration config)
-        { 
+        {
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
+
             // Web API routes
             config.MapHttpAttributeRoutes();
 

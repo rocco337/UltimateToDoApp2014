@@ -10,9 +10,9 @@ namespace UltimateToDoApp.WebApi
 {
     public class BaseApiController : ApiController
     {
-        public HttpResponseMessage Options()
-        {
-            return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
-        }
+        //public HttpResponseMessage Options()
+        //{
+        //    return new HttpResponseMessage { StatusCode = HttpStatusCode.OK };
+        //}
     }
 }

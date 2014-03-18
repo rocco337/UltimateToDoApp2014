@@ -22,7 +22,7 @@
             $http({
                 method: 'POST',              
                 url: apiUrl + insertUpdate,
-                data: angular.toJson(task),
+                data: data,
                 headers: {
                     'Content-Type': 'application/json',
                 }

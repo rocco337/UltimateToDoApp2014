@@ -14,8 +14,6 @@ namespace UltimateToDoApp.WebApi
     {
         protected void Application_Start()
         {
-            ValueProviderFactories.Factories.Add(new JsonValueProviderFactory());
-
             AreaRegistration.RegisterAllAreas();          
             GlobalConfiguration.Configure(WebApiConfig.Register);            
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
