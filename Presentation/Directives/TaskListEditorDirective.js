@@ -25,14 +25,16 @@
             $scope.DeleteTask = function(index)
             {
                 var task = $scope.tasks.splice(index, 1)[0];
-                TasksService.DeleteTask(task);
+                TasksService.DeleteTask(task, function (data, status, headers, config) {
+                   //
+                });
             }
 
             $scope.Refresh = function () {
                 TasksService.GetTasks($scope.category, function (data, status, headers, config) {
                     $scope.tasks = angular.fromJson(data);
                 });
-            }
+            }          
         }],
 
     }
