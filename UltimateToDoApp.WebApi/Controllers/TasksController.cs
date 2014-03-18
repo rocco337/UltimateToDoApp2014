@@ -6,19 +6,21 @@ using System.Web.Http;
 using UltimateToDoApp.Contracts;
 using UltimateToDoApp.DataAccess;
 
+
 namespace UltimateToDoApp.WebApi.Controllers
 {
-    public class TasksController : ApiController, ITasksRepository
+
+    public class TasksController : BaseApiController, ITasksRepository
     {
         static readonly ITasksRepository repository = new TasksRepository();
 
-        [HttpPost]
+       [System.Web.Http.HttpPost]      
         public CreateUpdateTaskResponse CreateUpdateTask(TaskItemModel model)
         {
             return repository.CreateUpdateTask(model);
         }
 
-        [HttpPost]
+       [System.Web.Http.HttpPost]
         public HttpBaseResponse DeleteTask(TaskItemModel model)
         {
             return repository.DeleteTask(model);

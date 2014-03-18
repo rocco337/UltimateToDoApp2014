@@ -14,7 +14,9 @@
 
                 $scope.tasks.push(task);
 
-                TasksService.InsertNewTask(task);
+                TasksService.InsertNewTask(task, function (data, status, headers, config) {
+                    //so something
+                });
 
                 $scope.task = new TaskItemModel();
                 task = new TaskItemModel();
@@ -24,6 +26,12 @@
             {
                 var task = $scope.tasks.splice(index, 1)[0];
                 TasksService.DeleteTask(task);
+            }
+
+            $scope.Refresh = function () {
+                TasksService.GetTasks($scope.category, function (data, status, headers, config) {
+                    $scope.tasks = angular.fromJson(data);
+                });
             }
         }],
 

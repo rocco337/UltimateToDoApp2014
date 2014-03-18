@@ -1,9 +1,15 @@
 ﻿/// <reference path="../Models/TaskItemModel.js" />
 
 ultimateToDoApp.controller('mainController', function MainCtrl($scope, TasksService) {
-    $scope.urgentImportant = TasksService.GetTasks(1);
+    TasksService.GetTasks(1, function (data, status, headers, config) {
+        $scope.urgentImportant = angular.fromJson(data);
+    });
     $scope.urgentNotImportant = [];
-    $scope.notUrgentImportant = TasksService.GetTasks(3);
+
+    TasksService.GetTasks(3, function (data, status, headers, config) {
+        $scope.notUrgentImportant = angular.fromJson(data);
+    });
+
     $scope.notUrgentNotImportant = [];
 
 });
