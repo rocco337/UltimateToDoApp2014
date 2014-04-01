@@ -4,38 +4,32 @@
         templateUrl: 'Views/TaskListEditor.html',
         scope: {
             tasks: '=',
-            category:'='
+            category: '='
         },
-        controller: ['$scope', function ($scope) {
-            $scope.AddTask = function (task) {
-                task.Index = $scope.tasks.length + 1;
-                task.Category = $scope.category;
-                task.Created = new Date();
+        controller: [
+            '$scope', function ($scope) {
+                $scope.AddTask = function (task) {
+                    task.Index = $scope.tasks.length + 1;
+                    task.Category = $scope.category;
+                    task.Created = new Date();
 
-                $scope.tasks.push(task);
+                    $scope.tasks.push(task);
 
-                TasksService.InsertNewTask(task, function (data, status, headers, config) {
-                    //so something
-                });
+                    TasksService.InsertNewTask(task, function (data, status, headers, config) {
+                        //do something
+                    });
 
-                $scope.task = new TaskItemModel();
-                task = new TaskItemModel();
-            };
+                    $scope.task = new TaskItemModel();
+                    task = new TaskItemModel();
+                };
 
-            $scope.DeleteTask = function(index)
-            {
-                var task = $scope.tasks.splice(index, 1)[0];
-                TasksService.DeleteTask(task, function (data, status, headers, config) {
-                   //
-                });
-            }
-
-            $scope.Refresh = function () {
-                TasksService.GetTasks($scope.category, function (data, status, headers, config) {
-                    $scope.tasks = angular.fromJson(data);
-                });
-            }          
-        }],
-
-    }
+                $scope.DeleteTask = function (index) {
+                    var task = $scope.tasks.splice(index, 1)[0];
+                    TasksService.DeleteTask(task, function (data, status, headers, config) {
+                        //do something
+                    });
+                };
+            }]
+    };
 });
+//# sourceMappingURL=TaskListEditorDirective.js.map

@@ -28,9 +28,9 @@ namespace UltimateToDoApp.WebApi.Controllers
         }
 
         [HttpGet]
-        public TaskItemModel[] GetTasks()
+        public TaskItemModel[] GetTasks(int? id)
         {
-            return repository.GetTasks();
+            return repository.GetTasks(id);
         }
     }
 }

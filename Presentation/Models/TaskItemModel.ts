@@ -4,5 +4,4 @@
     this.Name = "";
     this.Category = 0;
     this.Created = {};
-}
-//# sourceMappingURL=TaskItemModel.js.map
+} 
