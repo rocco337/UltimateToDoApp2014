@@ -1,8 +1,6 @@
-﻿function TaskItemModel() {
-    this.Token = "";
-    this.Index = 0;
-    this.Name = "";
-    this.Category = 0;
-    this.Created = {};
-}
+﻿var TaskItemModel = (function () {
+    function TaskItemModel() {
+    }
+    return TaskItemModel;
+})();
 //# sourceMappingURL=TaskItemModel.js.map

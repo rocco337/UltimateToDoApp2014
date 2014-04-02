@@ -1,1 +1,1 @@
-{"version":3,"file":"TaskItemModel.js","sourceRoot":"","sources":["TaskItemModel.ts"],"names":["TaskItemModel"],"mappings":"AAAA,SAAS,aAAa;IAClBA,IAAIA,CAACA,KAAKA,GAAGA,EAAEA;IACfA,IAAIA,CAACA,KAAKA,GAAGA,CAACA;IACdA,IAAIA,CAACA,IAAIA,GAAGA,EAAEA;IACdA,IAAIA,CAACA,QAAQA,GAAGA,CAACA;IACjBA,IAAIA,CAACA,OAAOA,GAAGA,EAAEA;AACrBA,CAACA"}
+{"version":3,"file":"TaskItemModel.js","sourceRoot":"","sources":["TaskItemModel.ts"],"names":["TaskItemModel","TaskItemModel.constructor"],"mappings":"AAAA;IAAAA;IAOAC,CAACA;AAAAD,IAADA,qBAACA;AAADA,CAACA,IAAA"}
