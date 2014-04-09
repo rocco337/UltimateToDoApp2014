@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="ultimateToDoApp">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
 <head>
     <title>Ultimate ToDoApp</title>
     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />
@@ -11,6 +11,9 @@
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Settings</a></li>
         <li><a href="#">About</a></li>
+        <li class="pull-right">
+            <board-dropdown boards="boards"></board-dropdown>
+        </li>
     </ul>
 
     <div class="row">
@@ -30,7 +33,7 @@
             <task-list-editor tasks="notUrgentNotImportant" category="4"></task-list-editor>
         </div>
     </div>   
-    <script src="Scripts/ApplicationInit.js"
+    
 <!-- Models-->
     <script src="Models/TaskItemModel.js"></script>
     <!-- EndModels-->
@@ -41,7 +44,8 @@
     <script src="Controllers/MainController.js"></script>
     <!--EndControllers-->
     <!--Services-->
-    <script src="Services/TasksService.js"></script>
+    <script src="Services/tasksService.js"></script>
     <!--EndServices-->
+    <script src="Application.js"></script>
 </body>
 </html>

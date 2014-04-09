@@ -18,7 +18,7 @@ namespace UltimateToDoApp.WebApi.Controllers
        [System.Web.Http.HttpPost]      
         public CreateUpdateTaskResponse CreateUpdateTask(TaskItemModel model)
         {
-            return repository.CreateUpdateTask(model);
+           return repository.CreateUpdateTask(model);
         }
 
        [System.Web.Http.HttpPost]
@@ -31,6 +31,7 @@ namespace UltimateToDoApp.WebApi.Controllers
         public TaskItemModel[] GetTasks(int? id)
         {
             return repository.GetTasks(id);
+
         }
     }
 }

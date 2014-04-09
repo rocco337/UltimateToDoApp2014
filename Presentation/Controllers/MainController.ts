@@ -1,21 +1,39 @@
-﻿ultimateToDoApp.controller('mainController', function MainCtrl($scope, TasksService) {
-    TasksService.GetTasks(1, function (data, status, headers, config) {
-        $scope.urgentImportant = angular.fromJson(data);
-    });
+﻿module UltimateToDoApp {
+    'use strict';
 
-    TasksService.GetTasks(2, function (data, status, headers, config) {
-        $scope.urgentNotImportant = angular.fromJson(data);
-    });
-    
-    TasksService.GetTasks(3, function (data, status, headers, config) {
-        $scope.notUrgentImportant = angular.fromJson(data);
-    });
+    export class mainController
+    {
+        public static $inject = [
+            '$scope',
+            'tasksService',
+        ];
 
-    TasksService.GetTasks(4, function (data, status, headers, config) {
-        $scope.notUrgentNotImportant = angular.fromJson(data);
-    });
-});
+        constructor(
+            private $scope: IUltimateToDoAppScope,
+            private tasksService: ITasksService,
+            private boardSerivce : IBoardService
+            ) {
 
+             boardSerivce.GetBoards(function (data, status, headers, config) {
+                 $scope.boards = angular.fromJson(data);
+            });
 
+            tasksService.GetTasks(1, function (data, status, headers, config) {
+                $scope.urgentImportant = angular.fromJson(data);
+            });
 
- 
+            tasksService.GetTasks(2, function (data, status, headers, config) {
+                $scope.notUrgentImportant = angular.fromJson(data);
+            });
+
+            tasksService.GetTasks(3, function (data, status, headers, config) {
+                $scope.urgentNotImportant = angular.fromJson(data);
+            });
+
+            tasksService.GetTasks(4, function (data, status, headers, config) {
+                $scope.notUrgentNotImportant = angular.fromJson(data);
+            });
+        }
+
+    }
+}
