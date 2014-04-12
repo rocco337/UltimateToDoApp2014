@@ -12,8 +12,8 @@
         function tasksService($http) {
             this.$http = $http;
         }
-        tasksService.prototype.GetTasks = function (category, callback) {
-            this.$http({ method: 'GET', url: apiUrl + getTasks + "/" + category }).success(function (data, status, headers, config) {
+        tasksService.prototype.GetTasks = function (boardId, category, callback) {
+            this.$http({ method: 'GET', url: apiUrl + getTasks + "?boardId=" + boardId + "&id=" + category }).success(function (data, status, headers, config) {
                 callback(data, status, headers, config);
             }).error(function (data, status, headers, config) {
                 console.log(data + "-" + status + "-" + headers + "-" + config);

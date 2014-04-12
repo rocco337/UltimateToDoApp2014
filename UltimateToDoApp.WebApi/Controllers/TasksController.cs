@@ -5,32 +5,32 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using UltimateToDoApp.Contracts;
-using UltimateToDoApp.DataAccess;
+using UltimateToDoApp.Services;
 
 
 namespace UltimateToDoApp.WebApi.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]    
-    public class TasksController : BaseApiController, ITasksRepository
+    public class TasksController : BaseApiController
     {
-        static readonly ITasksRepository repository = new TasksRepository();
+        TaskService service = new TaskService();
 
-       [System.Web.Http.HttpPost]      
+        [HttpPost]      
         public CreateUpdateTaskResponse CreateUpdateTask(TaskItemModel model)
         {
-           return repository.CreateUpdateTask(model);
+           return service.Create(model);
         }
 
-       [System.Web.Http.HttpPost]
+        [HttpPost]
         public HttpBaseResponse DeleteTask(TaskItemModel model)
         {
-            return repository.DeleteTask(model);
+            return service.Delete(model);
         }
 
         [HttpGet]
-        public TaskItemModel[] GetTasks(int? id)
+        public TaskItemModel[] GetTasks(string boardId, int? id)
         {
-            return repository.GetTasks(id);
+            return service.GetList(boardId,id);
 
         }
     }

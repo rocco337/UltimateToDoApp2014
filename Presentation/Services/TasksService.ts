@@ -16,8 +16,8 @@
 
         constructor(private $http: ng.IHttpService) { }
 
-        GetTasks (category:number, callback)  {
-            this.$http({ method: 'GET', url: apiUrl + getTasks + "/" + category }).
+        GetTasks(boardId:string,category:number, callback)  {
+            this.$http({ method: 'GET', url: apiUrl + getTasks + "?boardId=" + boardId+"&id=" + category }).
                 success(function (data, status, headers, config) {
                     callback(data, status, headers, config);
                 }).

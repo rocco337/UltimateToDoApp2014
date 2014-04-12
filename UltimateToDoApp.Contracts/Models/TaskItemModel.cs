@@ -14,5 +14,6 @@ namespace UltimateToDoApp.Contracts
         public int Category { get; set; }
         public DateTime Created { get; set; }
         public int UserId { get; set; }
+        public string BoardId { get; set; }
     }
 }

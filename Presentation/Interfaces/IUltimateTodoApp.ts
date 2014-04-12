@@ -1,7 +1,7 @@
 ﻿module UltimateToDoApp {
     export interface ITasksService
     {
-        GetTasks(category: number, callback: (data, status, headers, config) => any);
+        GetTasks(boardId:string,category: number, callback: (data, status, headers, config) => any);
 
         InsertNewTask(task: TaskItemModel, callback: (data, status, headers, config) => any);
 

@@ -1,22 +1,35 @@
-﻿var UltimateTodoApp;
-(function (UltimateTodoApp) {
+﻿var UltimateToDoApp;
+(function (UltimateToDoApp) {
     'use strict';
 
     function boardDropdown(boardService) {
         return {
             restrict: "AE",
-            templateUrl: "views/boardDropdown",
+            templateUrl: "Views/NewBoard.html",
             scope: {
-                boards: "="
+                boards: "=",
+                activeBoard: "="
             },
             controller: [
                 "$scope", function ($scope) {
                     $scope.deleteBoard = function () {
                         //todo
+                    }, $scope.addBoard = function (model) {
+                        $scope.showPopup = false;
+                        boardService.CreateBoard(model, function (data, status, headers, config) {
+                            $scope.boards.push(model);
+                            $scope.activeBoard = model;
+                            $scope.$parent.initBoard(model.Id);
+                        });
+                    }, $scope.boardChanged = function (board) {
+                        $scope.$parent.initBoard(board.Id);
+                    }, $scope.showAddBoard = function () {
+                        $scope.showPopup = true;
+                        $("body").addClass("add-modal");
                     };
                 }]
         };
     }
-    UltimateTodoApp.boardDropdown = boardDropdown;
-})(UltimateTodoApp || (UltimateTodoApp = {}));
+    UltimateToDoApp.boardDropdown = boardDropdown;
+})(UltimateToDoApp || (UltimateToDoApp = {}));
 //# sourceMappingURL=BoardDropdownDirective.js.map

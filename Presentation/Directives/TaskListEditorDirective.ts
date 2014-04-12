@@ -12,8 +12,7 @@
                 category: '='
             },
            controller: ['$scope', function ($scope) {
-                $scope.AddTask = function (task) {
-                    task.Index = $scope.tasks.length + 1;
+                $scope.AddTask = function (task : TaskItemModel) {                   
                     task.Category = $scope.category;
                     task.Created = new Date();
 

@@ -5,5 +5,8 @@
         notUrgentImportant: TaskItemModel[];
         notUrgentNotImportant: TaskItemModel[];
         boards: BoardModel[];
+        activeBoard: BoardModel;
+        newBoard: BoardModel;
+        initBoard: (boardId)=>any
     }
 } 

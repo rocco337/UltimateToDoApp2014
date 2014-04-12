@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1D287AF7-C56B-4D90-8A81-DAEA4B997C19}</ProjectGuid>
+    <ProjectGuid>{086B8A9C-250A-4B27-A828-A173015CA3E4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UltimateToDoApp.Contracts</RootNamespace>
-    <AssemblyName>UltimateToDoApp.Contracts</AssemblyName>
+    <RootNamespace>UltimateToDoApp.Services</RootNamespace>
+    <AssemblyName>UltimateToDoApp.Services</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,16 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaces\IBoardService.cs" />
-    <Compile Include="Interfaces\ITaskService.cs" />
-    <Compile Include="Models\BoardModel.cs" />
-    <Compile Include="Models\CreateBoardResponse.cs" />
-    <Compile Include="Models\CreateUpdateTaskResponse.cs" />
-    <Compile Include="Models\GetBoardsResponse.cs" />
-    <Compile Include="Models\HttpBaseResponse.cs" />
-    <Compile Include="Interfaces\ITasksRepository.cs" />
+    <Compile Include="BoardService.cs" />
+    <Compile Include="TaskService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\TaskItemModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UltimateToDoApp.Contracts\UltimateToDoApp.Contracts.csproj">
+      <Project>{1d287af7-c56b-4d90-8a81-daea4b997c19}</Project>
+      <Name>UltimateToDoApp.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UltimateToDoApp.DataAccess\UltimateToDoApp.DataAccess.csproj">
+      <Project>{1895cd20-685c-42b8-bb10-c0c129d96382}</Project>
+      <Name>UltimateToDoApp.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
