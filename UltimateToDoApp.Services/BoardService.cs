@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,44 +8,38 @@ using UltimateToDoApp.Contracts;
 using UltimateToDoApp.Contracts.Interfaces;
 using UltimateToDoApp.Contracts.Models;
 using UltimateToDoApp.DataAccess;
+using UltimateToDoApp.EntityFramework.Entities;
 
 
 namespace UltimateToDoApp.Services
 {
-    public class BoardService : IBoardService
+    public class BoardService : ServiceBase,IBoardService
     {
-        List<BoardModel> Boards;
-
-        public BoardService()
-        {
-            if(Boards==null)
-                Boards= Repository.Boards().ToList();
-        }
         public GetBoardsResponse GetBoards()
         {
             return new GetBoardsResponse() { 
              Success=true,
-             List = Boards
+             List = db.Boards.ToModelList()
             };
         }
-
-
+        
         public CreateBoardResponse Create(BoardModel model)
         {
             if(string.IsNullOrEmpty(model.Id))
             {
                 model.Id = Guid.NewGuid().ToString();
-                Boards.Add(model);
+                db.Boards.Add(model.ToEntity());
+                db.SaveChanges();
             }
             else
             {
-                var modelToUpdate = Boards.Where(m => m.Id == model.Id).FirstOrDefault();
+                var modelToUpdate = db.Boards.Where(m => m.Id == model.Id).FirstOrDefault();
 
                 if (modelToUpdate == null)
                     throw new NullReferenceException("board id not found");
 
-                Boards.Remove(modelToUpdate);
-                Boards.Add(model);
+                modelToUpdate = model.ToEntity();
+                db.SaveChanges();
             }
 
             return new CreateBoardResponse()

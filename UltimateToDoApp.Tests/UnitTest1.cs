@@ -19,7 +19,7 @@ namespace UltimateToDoApp.Tests
             Created = DateTime.Now,
             Name = "Dentist appointemnt",
             UserId = 1,
-            Token = "testguid"
+            Id = "testguid"
         };
 
         [TestMethod]

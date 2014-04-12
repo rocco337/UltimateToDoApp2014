@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.Tests", "Ul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.Services", "UltimateToDoApp.Services\UltimateToDoApp.Services.csproj", "{086B8A9C-250A-4B27-A828-A173015CA3E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UltimateToDoApp.EntityFramework", "UltimateToDoApp.EntityFramework\UltimateToDoApp.EntityFramework.csproj", "{FD6680C5-52A4-4827-B09F-07D6F9687B74}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{086B8A9C-250A-4B27-A828-A173015CA3E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086B8A9C-250A-4B27-A828-A173015CA3E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{086B8A9C-250A-4B27-A828-A173015CA3E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6680C5-52A4-4827-B09F-07D6F9687B74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6680C5-52A4-4827-B09F-07D6F9687B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6680C5-52A4-4827-B09F-07D6F9687B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6680C5-52A4-4827-B09F-07D6F9687B74}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

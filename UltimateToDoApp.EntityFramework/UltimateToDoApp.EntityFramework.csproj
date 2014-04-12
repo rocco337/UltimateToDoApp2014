@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{086B8A9C-250A-4B27-A828-A173015CA3E4}</ProjectGuid>
+    <ProjectGuid>{FD6680C5-52A4-4827-B09F-07D6F9687B74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UltimateToDoApp.Services</RootNamespace>
-    <AssemblyName>UltimateToDoApp.Services</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <RootNamespace>UltimateToDoApp.EntityFramework</RootNamespace>
+    <AssemblyName>UltimateToDoApp.EntityFramework</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,12 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper">
-      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.dll</HintPath>
-    </Reference>
-    <Reference Include="AutoMapper.Net4">
-      <HintPath>..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll</HintPath>
-    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -46,6 +39,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,35 +47,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BoardService.cs" />
-    <Compile Include="Mappings.cs" />
-    <Compile Include="ServiceBase.cs" />
-    <Compile Include="TaskService.cs" />
+    <Compile Include="AppDbContext.cs" />
+    <Compile Include="Entities\BoardEntity.cs" />
+    <Compile Include="Entities\TaskEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UltimateToDoApp.Contracts\UltimateToDoApp.Contracts.csproj">
-      <Project>{1d287af7-c56b-4d90-8a81-daea4b997c19}</Project>
-      <Name>UltimateToDoApp.Contracts</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UltimateToDoApp.DataAccess\UltimateToDoApp.DataAccess.csproj">
-      <Project>{1895cd20-685c-42b8-bb10-c0c129d96382}</Project>
-      <Name>UltimateToDoApp.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UltimateToDoApp.EntityFramework\UltimateToDoApp.EntityFramework.csproj">
-      <Project>{fd6680c5-52a4-4827-b09f-07d6f9687b74}</Project>
-      <Name>UltimateToDoApp.EntityFramework</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\packages\AutoMapper.3.1.1\lib\net40\AutoMapper.Net4.dll">
-      <Link>AutoMapper.Net4.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,12 +12,13 @@ namespace UltimateToDoApp.DataAccess
     public static class Repository
     {
         private static string boardGuid=Guid.NewGuid().ToString();
+
         private static List<TaskItemModel> tasks = new List<TaskItemModel>() { 
-            new TaskItemModel() { Token = Guid.NewGuid().ToString(), Category = 1, Created = DateTime.Now, UserId = 1, Name = "Guitar teacher",BoardId = boardGuid },
-            new TaskItemModel() { Token = Guid.NewGuid().ToString(), Category = 1, Created = DateTime.Now, UserId = 1, Name = "Dentist appointment",BoardId = boardGuid },
-            new TaskItemModel() { Token = Guid.NewGuid().ToString(), Category = 2, Created = DateTime.Now, UserId = 1, Name = "Read some cool book",BoardId = boardGuid },
-            new TaskItemModel() { Token = Guid.NewGuid().ToString(), Category = 2, Created = DateTime.Now, UserId = 1, Name = "Download new Boss album",BoardId = boardGuid },
-            new TaskItemModel() { Token = "testguid", Category = 3, Created = DateTime.Now, UserId = 1, Name = "New dummy task" }
+            new TaskItemModel() { Id = Guid.NewGuid().ToString(), Category = 1, Created = DateTime.Now, UserId = 1, Name = "Guitar teacher",BoardId = boardGuid },
+            new TaskItemModel() { Id = Guid.NewGuid().ToString(), Category = 1, Created = DateTime.Now, UserId = 1, Name = "Dentist appointment",BoardId = boardGuid },
+            new TaskItemModel() { Id = Guid.NewGuid().ToString(), Category = 2, Created = DateTime.Now, UserId = 1, Name = "Read some cool book",BoardId = boardGuid },
+            new TaskItemModel() { Id = Guid.NewGuid().ToString(), Category = 2, Created = DateTime.Now, UserId = 1, Name = "Download new Boss album",BoardId = boardGuid },
+            new TaskItemModel() { Id = "testguid", Category = 3, Created = DateTime.Now, UserId = 1, Name = "New dummy task" }
 
         };
 

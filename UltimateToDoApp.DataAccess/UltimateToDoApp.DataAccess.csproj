@@ -48,6 +48,10 @@
       <Project>{1d287af7-c56b-4d90-8a81-daea4b997c19}</Project>
       <Name>UltimateToDoApp.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UltimateToDoApp.EntityFramework\UltimateToDoApp.EntityFramework.csproj">
+      <Project>{fd6680c5-52a4-4827-b09f-07d6f9687b74}</Project>
+      <Name>UltimateToDoApp.EntityFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

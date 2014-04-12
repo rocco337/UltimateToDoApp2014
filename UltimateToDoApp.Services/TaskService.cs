@@ -9,57 +9,52 @@ using UltimateToDoApp.DataAccess;
 
 namespace UltimateToDoApp.Services
 {
-    public class TaskService : ITaskService
+    public class TaskService : ServiceBase,ITaskService
     {
-        List<TaskItemModel> Tasks;
-
-        public TaskService()
-        {
-            if(Tasks==null)
-                Tasks=Repository.Tasks().ToList();
-
-        }
         public CreateUpdateTaskResponse Create(TaskItemModel model)
         {
-            if (string.IsNullOrEmpty(model.Token))
+            if (string.IsNullOrEmpty(model.Id))
             {
-                model.Token = Guid.NewGuid().ToString();
-                Tasks.Add(model);
+                model.Id = Guid.NewGuid().ToString();
+                db.Tasks.Add(model.ToEntity());
+                db.SaveChanges();
             }
             else
             {
-                var task = Tasks.Where(t => t.Token.Equals(model.Token)).FirstOrDefault();
+                var task = db.Tasks.Where(t => t.Id.Equals(model.Id)).FirstOrDefault();
 
                 if (task == null)
                     throw new NullReferenceException("Task not found");
 
-                task = model;
+                task = model.ToEntity();
             }
+            
+            db.SaveChanges();
 
             return new CreateUpdateTaskResponse() { Success = true, Task = model };
         }
 
         public HttpBaseResponse Delete(TaskItemModel model)
         {
-            var task = Tasks.Where(t => t.Token.Equals(model.Token)).FirstOrDefault();
+            var task = db.Tasks.Where(t => t.Id.Equals(model.Id)).FirstOrDefault();
 
             if (task == null)
                 throw new NullReferenceException("Task not found");
 
-            Tasks.Remove(task);
+            db.Tasks.Remove(task);
+            db.SaveChanges();
 
             return new HttpBaseResponse() { Success = true };
         }
 
         public TaskItemModel[] GetList(string boardId,int? categoryId)
         {
-            var result = Tasks.Where(m => m.BoardId == boardId);
+            var result = db.Tasks.Where(m => m.BoardId == boardId);
 
             if (categoryId.HasValue)
                 result = result.Where(m => m.Category == categoryId.Value);
 
-            return result.ToArray();
+            return result.ToModelList().ToArray();
         }
-
     }
 }
