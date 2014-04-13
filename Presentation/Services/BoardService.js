@@ -22,6 +22,12 @@
             this.PostJsonOnApi(createBoard, board, callback);
         };
 
+        boardService.prototype.InitEmptyBoard = function (callback) {
+            var board = new UltimateToDoApp.BoardModel();
+            board.Name = "Todo";
+
+            this.PostJsonOnApi(createBoard, board, callback);
+        };
         boardService.prototype.PostJsonOnApi = function (methodUrl, data, callback) {
             this.$http({
                 method: 'POST',

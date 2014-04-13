@@ -19,6 +19,9 @@
         GetTasks(boardId:string,category:number, callback)  {
             this.$http({ method: 'GET', url: apiUrl + getTasks + "?boardId=" + boardId+"&id=" + category }).
                 success(function (data, status, headers, config) {
+                    if (!data)
+                        data = [];
+
                     callback(data, status, headers, config);
                 }).
                 error(function (data, status, headers, config) {

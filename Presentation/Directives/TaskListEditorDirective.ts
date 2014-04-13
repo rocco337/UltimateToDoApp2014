@@ -16,6 +16,9 @@
                     task.Category = $scope.category;
                     task.Created = new Date();
 
+                    if (!$scope.tasks)
+                        $scope.tasks = [];
+
                     $scope.tasks.push(task);
 
                     tasksService.InsertNewTask(task, function (data, status, headers, config) {

@@ -28,6 +28,12 @@
             this.PostJsonOnApi(createBoard,board,callback);
         }
 
+        InitEmptyBoard(callback: (data, status, headers, config) => any) {
+            var board = new BoardModel();
+            board.Name = "Todo";
+
+            this.PostJsonOnApi(createBoard, board, callback);
+        }
         PostJsonOnApi(methodUrl: string, data: BoardModel, callback) {         
             this.$http({
                 method: 'POST',
