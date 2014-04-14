@@ -28,7 +28,13 @@
                         });
 
                         $scope.task = new UltimateToDoApp.TaskItemModel();
-                        task = new UltimateToDoApp.TaskItemModel();
+                        //task = new TaskItemModel();
+                    };
+
+                    $scope.UpdateTask = function (task) {
+                        tasksService.InsertNewTask(task, function (data, status, headers, config) {
+                            //do something
+                        });
                     };
 
                     $scope.DeleteTask = function (index) {

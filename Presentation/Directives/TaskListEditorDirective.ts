@@ -28,15 +28,21 @@
                     });
 
                     $scope.task = new TaskItemModel();
-                    task = new TaskItemModel();
+                    //task = new TaskItemModel();
                 };
 
+               $scope.UpdateTask = function (task: TaskItemModel) {                  
+                   tasksService.InsertNewTask(task, function (data, status, headers, config) {
+                       //do something
+                   });
+               };
+
                 $scope.DeleteTask = function (index) {
-                    var task = $scope.tasks.splice(index, 1)[0];
-                    tasksService.DeleteTask(task, function (data, status, headers, config) {
-                        //do something
-                    });
-                }
+                   var task = $scope.tasks.splice(index, 1)[0];
+                   tasksService.DeleteTask(task, function (data, status, headers, config) {
+                       //do something
+                   });
+               };
         }],
 
         }

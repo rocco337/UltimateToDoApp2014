@@ -22,7 +22,7 @@
                             $scope.$parent.initBoard(model.Id);
                         });
                     }, $scope.boardChanged = function (board) {
-                        $scope.$parent.initBoard(board.Id);
+                        $scope.$parent.initBoard(board);
                     }, $scope.showAddBoard = function () {
                         $scope.showPopup = true;
                         $("body").addClass("add-modal");

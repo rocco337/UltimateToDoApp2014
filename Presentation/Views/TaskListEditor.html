@@ -1,18 +1,35 @@
 ﻿
-<div class="row" style="margin:15px 15px;">
+<!--<div class="row" style="margin:15px 15px;">
     <div class="col-md-8">
         <input type="text" class="form-control" style="margin-top:5px;" placeholder="Enter task" ng-model="task.Name" />
+     
     </div>
     <div class="col-md-4">
         <button class="btn btn-lg" ng-click="AddTask(task)">Do it</button>      
     </div>
-</div>
+</div>-->
 <ul class="list-group">  
+    <li class="list-group-item">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <span ng-hide="inserting" ng-click="inserting=true">Enter task/memo/note...</span>
+                <div ng-show="inserting">
+                    <input class="form-control" style="height:inherit;" ng-enter="AddTask(task);inserting=false;" type="text" ng-model="task.Name" />
+                </div>
+            </div>            
+        </div>
+    </li>
     <li class="list-group-item" ng-repeat="task in tasks">
         <div class="row">
-            <div class="col-md-2">{{$index+1}}</div>
-            <div class="col-md-7">{{task.Name}}</div>
-            <div class="col-md-3"><button ng-click="DeleteTask($index)"><span class="glyphicon glyphicon-trash"></span></button></div>
+            <div class="col-md-1">{{$index+1}}</div>
+            <div class="col-md-10">
+                <span ng-hide="editing" ng-click="editing=true">{{task.Name}}</span>
+                <div ng-show="editing">
+                    <input class="form-control" style="height:inherit;" ng-enter="UpdateTask(task);editing=false;" type="text" ng-model="task.Name" />
+                </div>
+                </div>
+            <div class="col-md-1"><button ng-click="DeleteTask($index)"><span class="glyphicon glyphicon-trash"></span></button></div>
         </div>
     </li>
 </ul>

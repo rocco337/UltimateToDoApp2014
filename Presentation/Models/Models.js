@@ -8,5 +8,12 @@
         return TaskItemModel;
     })();
     UltimateToDoApp.TaskItemModel = TaskItemModel;
+
+    var BoardModel = (function () {
+        function BoardModel() {
+        }
+        return BoardModel;
+    })();
+    UltimateToDoApp.BoardModel = BoardModel;
 })(UltimateToDoApp || (UltimateToDoApp = {}));
-//# sourceMappingURL=TaskItemModel.js.map
+//# sourceMappingURL=Models.js.map

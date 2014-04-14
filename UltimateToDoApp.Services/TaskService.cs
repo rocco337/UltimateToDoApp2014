@@ -26,7 +26,10 @@ namespace UltimateToDoApp.Services
                 if (task == null)
                     throw new NullReferenceException("Task not found");
 
-                task = model.ToEntity();
+                task.BoardId = model.BoardId;
+                task.Category = model.Category;
+                task.Index = model.Index;
+                task.Name = model.Name;               
             }
             
             db.SaveChanges();

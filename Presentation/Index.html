@@ -7,6 +7,9 @@
     <script src="Scripts/jquery-2.1.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
     <script src="Scripts/angular.min.js"></script>
+    <style>
+        .task-holder{ padding:20px;}
+    </style>
 </head>
 <body ng-controller="mainController">
     <ul class="nav nav-tabs">
@@ -19,28 +22,31 @@
     </ul>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 task-holder">
+            <h3>Urgent</h3>
             <task-list-editor tasks="urgentImportant" category="1"></task-list-editor>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 task-holder">
+            <h3>Not urgent</h3>
             <task-list-editor tasks="notUrgentImportant" category="2"></task-list-editor>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 task-holder">
+            <h3>Important</h3>
             <task-list-editor tasks="urgentNotImportant" category="3"></task-list-editor>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 task-holder">
+            <h3>Not important</h3>
             <task-list-editor tasks="notUrgentNotImportant" category="4"></task-list-editor>
         </div>
     </div>   
     
-<!-- Models-->
-    <script src="Models/TaskItemModel.js"></script>
-    <script src="Models/BoardModel.js"></script>
-    <!-- EndModels-->
+
+    <script src="Models/Models.js"></script>
     <!--Directives-->
+    <script src="Directives/Direcitves.js"></script>
     <script src="Directives/TaskListEditorDirective.js"></script>
     <script src="Directives/BoardDropdownDirective.js"></script>
     <!--EndDirectives-->

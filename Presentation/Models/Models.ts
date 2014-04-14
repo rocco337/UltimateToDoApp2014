@@ -9,4 +9,9 @@
         BoardId: string;
         Index: number;
     }
-}
+    
+    export class BoardModel {
+        Id: number;
+        Name: string;
+    }
+} 
