@@ -15,6 +15,8 @@
                 $scope.AddTask = function (task : TaskItemModel) {                   
                     task.Category = $scope.category;
                     task.Created = new Date();
+                    task.BoardId = $scope.$parent.activeBoard;
+                    task.Index = $scope.tasks.length >0 ?  $scope.tasks.length - 1 : 0;
 
                     if (!$scope.tasks)
                         $scope.tasks = [];

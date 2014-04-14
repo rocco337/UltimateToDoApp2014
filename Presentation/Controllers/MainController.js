@@ -30,12 +30,12 @@
 
                 if (data.List && data.List.length != 0) {
                     //set first board as active
-                    $scope.activeBoard = data.List[0];
-                    $scope.initBoard($scope.activeBoard.Id);
+                    $scope.activeBoard = data.List[0].Id;
+                    $scope.initBoard($scope.activeBoard);
                 } else {
                     //create new board if user doesnt have any
                     boardService.InitEmptyBoard(function (data, status, headers, config) {
-                        $scope.activeBoard = data.Board;
+                        $scope.activeBoard = data.Board.Id;
                         $scope.initBoard(data.Board.Id);
                     });
                 }

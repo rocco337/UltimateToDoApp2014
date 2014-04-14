@@ -8,7 +8,7 @@
             templateUrl: "Views/NewBoard.html",
             scope: {
                 boards: "=",
-                activeBoard: "="
+                activeboard: "="
             },
             controller: [
                 "$scope", function ($scope) {
@@ -18,7 +18,7 @@
                         $scope.showPopup = false;
                         boardService.CreateBoard(model, function (data, status, headers, config) {
                             $scope.boards.push(model);
-                            $scope.activeBoard = model;
+                            $scope.activeboard = model.Id;
                             $scope.$parent.initBoard(model.Id);
                         });
                     }, $scope.boardChanged = function (board) {

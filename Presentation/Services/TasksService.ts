@@ -37,8 +37,7 @@
             this.PostJsonOnApi(deleteTask, task, callback);
         }
 
-        PostJsonOnApi(methodUrl: string, data: TaskItemModel, callback) {
-            data.BoardId = "empty-board";
+        PostJsonOnApi(methodUrl: string, data: TaskItemModel, callback) {           
             this.$http({
                 method: 'POST',
                 url: apiUrl + methodUrl,

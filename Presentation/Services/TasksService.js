@@ -14,6 +14,9 @@
         }
         tasksService.prototype.GetTasks = function (boardId, category, callback) {
             this.$http({ method: 'GET', url: apiUrl + getTasks + "?boardId=" + boardId + "&id=" + category }).success(function (data, status, headers, config) {
+                if (!data)
+                    data = [];
+
                 callback(data, status, headers, config);
             }).error(function (data, status, headers, config) {
                 console.log(data + "-" + status + "-" + headers + "-" + config);
@@ -29,7 +32,6 @@
         };
 
         tasksService.prototype.PostJsonOnApi = function (methodUrl, data, callback) {
-            data.BoardId = "empty-board";
             this.$http({
                 method: 'POST',
                 url: apiUrl + methodUrl,

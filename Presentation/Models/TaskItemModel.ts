@@ -6,6 +6,7 @@
         Name: string;
         Category: number;
         Created: Date;
-        BoardId: string
+        BoardId: string;
+        Index: number;
     }
 }

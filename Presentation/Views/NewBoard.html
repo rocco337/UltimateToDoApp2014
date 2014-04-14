@@ -6,9 +6,9 @@
     </div>
     <div class="col-lg-4">
         <select style="margin-right:20px;"
-                ng-options="board.Name for board in boards"
-                ng-change="boardChanged(activeBoard.Id)"
-                ng-model="activeBoard.Id"></select>
+                ng-options="board.Id as board.Name for board in boards"
+                ng-change="boardChanged(activeboard)"
+                ng-model="activeboard"></select>     
     </div>
 </div>
 
