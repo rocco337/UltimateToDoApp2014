@@ -5,14 +5,19 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using UltimateToDoApp.Contracts;
+using UltimateToDoApp.Contracts.Interfaces;
 using UltimateToDoApp.Contracts.Models;
-using UltimateToDoApp.Services;
 
 namespace UltimateToDoApp.WebApi.Controllers
 {
     public class BoardController : ApiController
     {
-        BoardService service = new BoardService();
+        private IBoardService service;
+
+        public BoardController(IBoardService svc)
+        {
+            this.service = svc;
+        }
 
         public GetBoardsResponse GetBoards()
         {

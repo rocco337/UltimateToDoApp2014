@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,8 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using UltimateToDoApp.Services;
+using UltimateToDoApp.WebApi.App_Start;
+using UltimateToDoApp.WebApi.Controllers;
 
 namespace UltimateToDoApp.WebApi
 {
@@ -23,6 +25,7 @@ namespace UltimateToDoApp.WebApi
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             Mappings.InitMappings();
+
         }
     }
 }

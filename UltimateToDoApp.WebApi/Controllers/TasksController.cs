@@ -5,15 +5,19 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
 using UltimateToDoApp.Contracts;
-using UltimateToDoApp.Services;
-
+using UltimateToDoApp.Contracts.Interfaces;
 
 namespace UltimateToDoApp.WebApi.Controllers
 {
     [EnableCors(origins: "*", headers: "*", methods: "*")]    
     public class TasksController : BaseApiController
     {
-        TaskService service = new TaskService();
+        ITaskService service;
+
+        public TasksController(ITaskService svc)
+        {
+            this.service = svc;
+        }
 
         [HttpPost]      
         public CreateUpdateTaskResponse CreateUpdateTask(TaskItemModel model)
