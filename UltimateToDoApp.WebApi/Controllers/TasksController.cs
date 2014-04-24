@@ -56,10 +56,9 @@ namespace UltimateToDoApp.WebApi.Controllers
         }
 
         [HttpGet]
-        public TaskItemModel[] GetTasks(string boardId, int? id)
+        public TaskItemModel[] GetTasks(string boardId, int? categoryId)
         {
-            return service.GetList(boardId,id);
-
+            return service.GetList(boardId, categoryId);
         }
     }
 }
