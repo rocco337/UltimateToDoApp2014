@@ -5,6 +5,8 @@ using UltimateToDoApp.Contracts;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Collections.Generic;
+using UltimateToDoApp.WebApi.Controllers;
+using UltimateToDoApp.Services;
 
 namespace UltimateToDoApp.Tests
 {
@@ -64,6 +66,13 @@ namespace UltimateToDoApp.Tests
             var stringContent = new StringContent(content);
             stringContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             return stringContent;
+        }
+
+        [TestMethod]
+        public void TestGetBoards()
+        {
+            //var controller = new BoardController(new BoardService());
+            //controller
         }
     }
 }

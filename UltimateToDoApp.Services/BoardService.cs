@@ -15,12 +15,9 @@ namespace UltimateToDoApp.Services
 {
     public class BoardService : ServiceBase,IBoardService
     {
-        public GetBoardsResponse GetBoards()
+        public BoardModel[] GetBoards()
         {
-            return new GetBoardsResponse() { 
-             Success=true,
-             List = db.Boards.ToModelList()
-            };
+            return db.Boards.ToModelArray();
         }
         
         public CreateBoardResponse Create(BoardModel model)

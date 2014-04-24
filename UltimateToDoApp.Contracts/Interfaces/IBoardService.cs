@@ -9,7 +9,7 @@ namespace UltimateToDoApp.Contracts.Interfaces
 {
     public interface IBoardService
     {
-        GetBoardsResponse GetBoards();
+        BoardModel[] GetBoards();
         CreateBoardResponse Create(BoardModel model);
     }
 }

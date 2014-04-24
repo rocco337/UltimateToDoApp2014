@@ -59,6 +59,11 @@ namespace UltimateToDoApp.Services
             return Mapper.Map<List<BoardModel>>(entities);
         }
 
+        public static BoardModel[] ToModelArray(this DbSet<BoardEntity> entities)
+        {
+            return Mapper.Map<BoardModel[]>(entities);
+        }
+
         #endregion
     }
 }

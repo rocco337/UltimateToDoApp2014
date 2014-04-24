@@ -14,19 +14,37 @@ namespace UltimateToDoApp.WebApi.Controllers
     {
         private IBoardService service;
 
-        public BoardController(IBoardService svc)
+        public BoardController(IBoardService svc) : base()
         {
             this.service = svc;
         }
 
-        public GetBoardsResponse GetBoards()
+        public BoardModel[] GetBoards()
         {
             return service.GetBoards();
         }
 
-        public CreateBoardResponse Create(BoardModel model)
+        [HttpPost]
+        public HttpResponseMessage Create(BoardModel model)
         {
-            return service.Create(model);
+            var result = service.Create(model);
+            
+            if(!result.Success)            
+              return Request.CreateResponse(HttpStatusCode.InternalServerError,result.Message);
+            
+            return Request.CreateResponse(HttpStatusCode.Created, result.Board);
+        }
+
+        [HttpPut]
+        public HttpResponseMessage Update(string id,BoardModel model)
+        {
+            model.Id = id;
+            var result = service.Create(model);
+
+            if (!result.Success)
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, result.Message);
+
+            return Request.CreateResponse(HttpStatusCode.Created, result.Board);
         }
     }
 }

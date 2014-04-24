@@ -68,6 +68,14 @@
       <Project>{1d287af7-c56b-4d90-8a81-daea4b997c19}</Project>
       <Name>UltimateToDoApp.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UltimateToDoApp.Services\UltimateToDoApp.Services.csproj">
+      <Project>{086b8a9c-250a-4b27-a828-a173015ca3e4}</Project>
+      <Name>UltimateToDoApp.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UltimateToDoApp.WebApi\UltimateToDoApp.WebApi.csproj">
+      <Project>{568d5360-33f9-45e5-896d-293dabc76493}</Project>
+      <Name>UltimateToDoApp.WebApi</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
