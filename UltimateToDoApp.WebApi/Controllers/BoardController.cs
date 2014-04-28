@@ -19,7 +19,8 @@ namespace UltimateToDoApp.WebApi.Controllers
             this.service = svc;
         }
 
-        public BoardModel[] GetBoards()
+        [HttpGet]
+        public BoardModel[] Get()
         {
             return service.GetBoards();
         }

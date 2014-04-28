@@ -22,7 +22,7 @@ namespace UltimateToDoApp.WebApi.Controllers
         }
 
         [HttpPost]      
-        public HttpResponseMessage CreateUpdateTask(TaskItemModel model)
+        public HttpResponseMessage Create(TaskItemModel model)
         {
            var result= service.Create(model);
 
@@ -33,7 +33,7 @@ namespace UltimateToDoApp.WebApi.Controllers
         }
 
         [HttpPut]
-        public HttpResponseMessage CreateUpdateTask(string id,TaskItemModel model)
+        public HttpResponseMessage Update(string id,TaskItemModel model)
         {
             model.Id = id;
             var result = service.Create(model);
@@ -45,7 +45,7 @@ namespace UltimateToDoApp.WebApi.Controllers
         }
 
         [HttpDelete]
-        public HttpResponseMessage DeleteTask(TaskItemModel model)
+        public HttpResponseMessage Delete(TaskItemModel model)
         {
             var result = service.Delete(model);
 
@@ -56,9 +56,9 @@ namespace UltimateToDoApp.WebApi.Controllers
         }
 
         [HttpGet]
-        public TaskItemModel[] GetTasks(string boardId, int? categoryId)
+        public TaskItemModel[] Get(int? id,string boardId)
         {
-            return service.GetList(boardId, categoryId);
+            return service.GetList(boardId, id);
         }
     }
 }

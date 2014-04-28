@@ -17,7 +17,6 @@ namespace UltimateToDoApp.Services
             {
                 model.Id = Guid.NewGuid().ToString();
                 db.Tasks.Add(model.ToEntity());
-                db.SaveChanges();
             }
             else
             {
